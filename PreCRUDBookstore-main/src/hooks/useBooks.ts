@@ -19,7 +19,7 @@ export function useBooks() {
     try {
       setLoading(true);
       setError(null);
-      const r = await fetch("/api/books"); // minúsculas
+      const r = await fetch("/api/books"); 
       if (!r.ok) throw new Error("Error al cargar");
       const data = await r.json();
       const arr = Array.isArray(data) ? data : (data.items ?? data.content ?? []);

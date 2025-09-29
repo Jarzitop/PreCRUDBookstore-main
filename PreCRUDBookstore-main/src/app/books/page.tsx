@@ -11,11 +11,11 @@ export default function BooksPage() {
 
   async function onDelete(id: number) {
     const prev = books;
-    setBooks(prev.filter(b => b.id !== id)); // optimista
+    setBooks(prev.filter(b => b.id !== id)); 
     try {
       await removeById(id);
     } catch (e: unknown) {
-      setBooks(prev); // rollback
+      setBooks(prev); 
       alert(e instanceof Error ? e.message : String(e));
     }
   }
